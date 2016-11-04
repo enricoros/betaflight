@@ -17,6 +17,8 @@
 
 #pragma once
 
+#include <stdint.h>
+
 #define TARGET_BOARD_IDENTIFIER "IFF3"
 
 #define CONFIG_FASTLOOP_PREFERRED_ACC ACC_NONE
