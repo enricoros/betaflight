@@ -341,6 +341,8 @@ cfTask_t cfTasks[TASK_COUNT] = {
         .taskName = "RX",
         .checkFunc = rxUpdateCheck,
         .taskFunc = taskUpdateRxMain,
+        // ENRICO: this is looping at 20Hz, while SBUS receives 11ms frames. Should figure out how to synchronize
+        // the scheduling right after the reception of the command.
         .desiredPeriod = TASK_PERIOD_HZ(50),        // If event-based scheduling doesn't work, fallback to periodic scheduling
         .staticPriority = TASK_PRIORITY_HIGH,
     },
