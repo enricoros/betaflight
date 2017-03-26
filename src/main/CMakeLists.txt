@@ -1,9 +1,24 @@
 cmake_minimum_required(VERSION 3.7)
-        project(main)
+project(main)
 
-        set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 11)
 
-        set(SOURCE_FILES
+# TBS Colibri Race
+include_directories(.)
+include_directories(target/COLIBRI_RACE)
+include_directories(main)
+include_directories(vcp)
+
+add_definitions(-DSPRACINGF3)
+add_definitions(-DONBOARDFLASH)
+add_definitions(-DFLASH_SIZE=256)
+add_definitions(-DTARGET=COLIBRI_RACE)
+add_definitions(-DF3_TARGETS=COLIBRI_RACE)
+add_definitions(-DSTM32F303xC)
+add_definitions(-DSTM32F303)
+
+
+set(SOURCE_FILES
         blackbox/blackbox.c
         blackbox/blackbox.h
         blackbox/blackbox_fielddefs.h
